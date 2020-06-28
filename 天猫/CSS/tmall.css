@@ -73,6 +73,10 @@
     top: 1px;
     color: #FF0036;
 }
+#header{
+    height: 130px;
+    width: 100%;
+}
 .tmall{
     width: 400px;
     height: 150px;
@@ -82,4 +86,56 @@
     width: 240px;
     height: 130px;
     margin-left: 160px;
+}
+.search{
+    margin-left: 480px;
+    padding-top: 50px;
+    width: 630px;
+    height: 40px;
+}
+.search input{
+    width: 491px;
+    height: 36px;
+    float: left;
+    border: solid #FF0036;
+    font-size: 14px;
+}
+.search button{
+    width: 130px;
+    height: 41px;
+    background: #FF0036;
+    border: solid #FF0036;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+}
+#category-type{
+    width: 200px;
+    height: 36px;
+    margin-left: 170px;
+    background: #FF0036;
+    padding-left: 10px;
+}
+#category-type .iconfont{
+    float: left;
+}
+#category-type .daohang{
+    color: #ffffff;
+    width: 40px;
+    height: 26px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: -10px;
+    display: block;
+    float: left;
+}
+.text{
+    width: 120px;
+    height: 36px;
+    /* margin-left: 50px; */
+    display: inline-block;
+    margin-top: -30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
 }
