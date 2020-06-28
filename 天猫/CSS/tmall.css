@@ -1,0 +1,85 @@
+#nav{
+    height: 32px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    width: 100%;
+    position: relative;
+    background: #f2f2f2;
+    z-index: 99999;
+    border-bottom: 1px solid #e5e5e5;
+}
+#title{
+    height: 32px;
+    width: 1230px;
+    color: #999;
+    position: relative;
+    margin: 0 153px;
+}
+.left{
+    width: 218px;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    padding-left: 20px;
+}
+.left a{
+    padding-left: 20px;
+    color: #999;
+}
+.left a:hover{
+    text-decoration: none;
+    color: #FF0036;
+}
+.right{
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.right li{
+    position: relative;
+    padding:0 18px;
+    float: left;
+}
+.right li a{
+    color: #999;
+}
+.right li a:hover{
+    text-decoration: none;
+    color: #FF0036;
+    background: #ffffff;
+}
+.right li :hover b{
+    transform: rotate(-180deg);
+}
+.right li b{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-width: 3px;
+    border-style: solid dashed dashed;
+    border-color: #bbb transparent transparent;
+    font-size: 0;
+    line-height: 0;
+}
+.right li .iconfont{
+    font-size: 12px;
+}
+.tubiao{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    color: #FF0036;
+}
+.tmall{
+    width: 400px;
+    height: 150px;
+    float: left;
+}
+.tmall img{
+    width: 240px;
+    height: 130px;
+    margin-left: 160px;
+}
