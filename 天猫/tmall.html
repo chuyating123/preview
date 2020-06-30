@@ -148,6 +148,23 @@
             </ul>
         </div>
     </div>
+    <div id="brand-wall">
+        <div class="one">
+            <span>品牌闪购</span>
+            <span>BRAND SALE</span>
+            <img src="../天猫/images/brand1.webp" alt="">
+        </div>
+        <div class="two">
+            <span>品牌闪购</span>
+            <span>BRAND SALE</span>
+            <img src="../天猫/images/brand2.webp" alt="">
+        </div>
+        <div class="three">
+            <span>品牌闪购</span>
+            <span>BRAND SALE</span>
+            <img src="../天猫/images/brand3.webp" alt="">
+        </div>
+    </div>
     <script>
         var imgList=document.getElementsByClassName("img-list")[0];
         var ali=imgList.getElementsByTagName("li")
@@ -162,23 +179,6 @@
             }
             ali[anow].className = "first";
         },2000);
-        // box.onmouseover=function(){
-        //     clearInterval(timer);
-        // }
-        // 局部变量，在外部不可访问，要变成全局变量
-        // 不能写成var timer=...
-        // img-box.onmouseout=function(){
-        //     timer=setInterval(function(){
-        //         anow++;
-        //     if (anow > ali.length - 1) {
-        //         anow = 0;
-        //     }
-        //     for (var i = 0; i < ali.length; i++) {
-        //         ali[i].className = "";
-        //     }
-        //     ali[anow].className = "first";
-        // },2000);
-        // }
     </script>
 </body>
 
