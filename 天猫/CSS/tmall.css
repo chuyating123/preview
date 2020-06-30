@@ -217,3 +217,30 @@
     position: absolute;
     top: 0;
 }
+.nomal-nav .sub-menu p{
+    width:80px;
+    height: 30px;
+    margin-top: 8px;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 900;
+    float: left;
+}
+.nomal-nav .sub-menu .sub-text{
+    margin-top: 8px;
+}
+.nomal-nav .sub-menu .sub-text a{
+    color: #000000;
+}
+#img-box .img-list li{
+    margin-left: 180px;
+    margin-top: -500px;
+    width: 1000px;
+    height: 500px;
+}
+#img-box .img-list li img{
+    display: none;
+}
+#img-box .img-list .first img{
+    display: block;
+}

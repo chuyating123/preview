@@ -85,8 +85,15 @@
                 <span class="iconfont icon-nvzhuang"></span>
                 <a href="#">女装/内衣</a>
                 <div class="sub-menu">
-                    <p>当季流行</p>
+                    <p>当季流行></p>
                     <div class="sub-text">
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
                         <a href="#">女装新品</a>
                     </div>
                 </div>
@@ -95,8 +102,14 @@
                 <span class="iconfont icon-nanzhuang"></span>
                 <a href="#">男装/运动户外</a>
                 <div class="sub-menu">
-                    <p>当季流行</p>
+                    <p>当季流行></p>
                     <div class="sub-text">
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
+                        <a href="#">女装新品</a>
                         <a href="#">女装新品</a>
                     </div>
                 </div>
@@ -124,7 +137,49 @@
                 <a href="#">腕表/眼镜/珠宝饰品</a>
             </li>
         </ul>
+        <div id="img-box">
+            <ul class="img-list">
+                <li class="first">
+                    <img src="../天猫/images/container1.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../天猫/images/container2.jpg" alt="">
+                </li>
+            </ul>
+        </div>
     </div>
+    <script>
+        var imgList=document.getElementsByClassName("img-list")[0];
+        var ali=imgList.getElementsByTagName("li")
+        var anow=0;
+        timer=setInterval(function(){
+            anow++;
+            if (anow > ali.length - 1) {
+                anow = 0;
+            }
+            for (var i = 0; i < ali.length; i++) {
+                ali[i].className = "";
+            }
+            ali[anow].className = "first";
+        },2000);
+        // box.onmouseover=function(){
+        //     clearInterval(timer);
+        // }
+        // 局部变量，在外部不可访问，要变成全局变量
+        // 不能写成var timer=...
+        // img-box.onmouseout=function(){
+        //     timer=setInterval(function(){
+        //         anow++;
+        //     if (anow > ali.length - 1) {
+        //         anow = 0;
+        //     }
+        //     for (var i = 0; i < ali.length; i++) {
+        //         ali[i].className = "";
+        //     }
+        //     ali[anow].className = "first";
+        // },2000);
+        // }
+    </script>
 </body>
 
 </html>
