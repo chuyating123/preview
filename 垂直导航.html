@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        #container{
+            width: 400px;
+            border: 1px solid #000000;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #container h2{
+          background: #000000;
+          color: #ffffff;
+          cursor: pointer;
+        }
+        #container ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h2>管理区</h2>
+            <ul>
+                <li>111</li>
+                <li>111</li>
+                <li>111</li>
+            </ul>
+        </div>
+        <div>
+            <h2>交流区</h2>
+            <ul>
+                <li>222</li>
+                <li>222</li>
+                <li>222</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var oh2=document.getElementsByTagName('h2')
+        for(var i=0;i<oh2.length;i++){
+            oh2[i].flag=false;
+            oh2[i].onclick=function(){
+                var oul=next(this);
+                if(this.flag){
+                  oul.style.display="none"
+                }
+                else{
+                    oul.style.display="block"
+                }
+                this.flag=!this.flag
+            }
+        }
+            function next(e){
+             do{
+                 e=e.nextSibling;
+             }while(e&&e.nodeType!=1)
+             return e;
+            }
+    </script>
+</body>
+</html>
