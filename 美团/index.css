@@ -105,10 +105,52 @@ body{
     border-bottom: 0.02rem solid #cccccc;
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
 }
 .list li{
     height: 1.62rem;
     width: 20%;
     box-sizing: border-box;
     padding: 0.2rem 0;
+    text-align: center;
+}
+.list span{
+    width: 0.8rem;
+    height: 0.8rem;
+    display: block;
+    margin:0 auto;
+    border-radius: 0.8rem; 
+    line-height: 0.8rem;
+    color:#fff;
+    font-size: 0.34rem;
+}
+.list .food{
+    background: #fd9d21;
+}
+.list .cat{
+    background: #ff6767;
+}
+.list .hotel{
+    background: #8a90fa;
+}
+.list .fun{
+    background: #fed030;
+}
+.list .takeout{
+    background: #fd9d21;
+}
+.list .ktv{
+    background: #fed030;
+}
+.list .travel{
+    background: #d9e5e9;
+}
+.list .girl{
+    background: #ff80c2;
+}
+.list .potato{
+    background: #fd9d21;
+}
+.list .more{
+    background: #00d3be;
 }
