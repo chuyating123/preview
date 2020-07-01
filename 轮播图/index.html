@@ -1,11 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .img-box {
+            width: 500px;
+            height: 500px;
+        }
+
+        .img-box img {
+            width: 500px;
+            height: 500px;
+            display: none;
+        }
+
+        .first img {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .title {
+            width: 160px;
+            position: absolute;
+            top: 480px;
+            left: 340px;
+        }
+
+        .title li {
+            background: rgba(0, 0, 0, 0.5);
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+            line-height: 20px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .history li {
+            background: rgba(0, 0, 0, 0.5);
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+            line-height: 20px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .history {
+            width: 60px;
+            position: absolute;
+            left: 10px;
+            bottom: 0px;
+        }
+
+        .one {
+            background: red;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="box">
+        <ul class="title">
+            <li class="one">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="history">
+            <li id="backbtn">&lt;</li>
+            <li id="nextbtn">&gt;</li>
+        </ul>
+        <ul class="img-box">
+            <li class="first"><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var otitle = document.getElementsByClassName("title")[0];
+        var oli = otitle.getElementsByTagName("li")
+        var oimg = document.getElementsByClassName("img-box")[0];
+        var ali = oimg.getElementsByTagName('li')
+        var onext = document.getElementById("nextbtn")
+        var oback = document.getElementById("backbtn")
+        var anow = 0;
+        for (var i = 0; i < oli.length; i++) {
+            oli[i].index = i;
+            oli[i].onclick = function () {
+                for (var j = 0; j < oli.length; j++) {
+                    oli[j].className = " ",
+                        ali[j].className = " "
+                }
+                this.className = "one"
+                ali[this.index].className = "first"
+                anow = this.index
+            }
+        }
+            onext.onclick = function () {
+                anow++;
+                if (anow > ali.length - 1) {
+                    anow = 0
+                }
+                for (var i = 0; i < oli.length; i++) {
+                    oli[i].className = " ",
+                        ali[i].className = " "
+                }
+                oli[anow].className = "one"
+                ali[anow].className = "first"
+            }
+            oback.onclick = function () {
+                anow--;
+                if (anow < 0) {
+                    anow = ali.length - 1
+                }
+                for (var i = 0; i < oli.length; i++) {
+                    oli[i].className = " ",
+                        ali[i].className = " "
+                }
+                oli[anow].className = "one"
+                ali[anow].className = "first"
+            }
+            timer = setInterval(function () {
+                onext.onclick()
+            }, 2000);
+            box.onmouseover = function () {
+                clearInterval(timer)
+            }
+            box.onmouseout = function () {
+                timer = setInterval(function () {
+                    onext.onclick()
+                }, 2000);
+            }
+    </script>
 </body>
+
 </html>
