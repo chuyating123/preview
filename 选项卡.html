@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        #box ul {
+            list-style: none;
+        }
+
+        #box .title {
+            overflow: hidden;
+        }
+
+        .title li {
+            width: 50px;
+            height: 30px;
+            float: left;
+            background: #eeeeee;
+            border: 1px solid #cccccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .title .first {
+            background: red;
+        }
+
+        #container div {
+            width: 350px;
+            height: 100px;
+            background: #eeeeee;
+            border: 1px solid #cccccc;
+            display: none;
+        }
+
+        #container .one {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul class="title">
+            <li class="first">时事</li>
+            <li>新闻</li>
+            <li>娱乐</li>
+        </ul>
+        <div id="container">
+            <div class="one">111</div>
+            <div>222</div>
+            <div>333</div>
+        </div>
+    </div>
+    <script>
+        var obox = document.getElementById('box')
+        var oli = obox.getElementsByTagName('li')
+        var ocontainer = document.getElementById('container')
+        var odiv = ocontainer.getElementsByTagName('div')
+        for (var i = 0; i < oli.length; i++) {
+            oli[i].index = i;
+            oli[i].onclick = function () {
+                for (var j = 0; j < oli.length; j++) {
+                    oli[j].className = " "
+                    odiv[j].className = " "
+                }
+                this.className="first"
+                odiv[this.index].className="one"
+            }
+        }
+    </script>
+</body>
+
+</html>
