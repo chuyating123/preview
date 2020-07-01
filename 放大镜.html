@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #small-box {
+            width: 400px;
+            height: 400px;
+        }
+
+        #small-box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #drag {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+
+        #big-box {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+            display: none;
+            overflow: hidden;
+        }
+
+        #big-box img {
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="small-box">
+            <img src="天猫/images/brand1.webp" alt="">
+            <span id="drag"></span>
+        </div>
+        <div id="big-box">
+            <img id="big-img" src="天猫/images/brand1.webp" alt="">
+        </div>
+    </div>
+    <script>
+        var osmallbox = document.getElementById('small-box');
+        var odrag = document.getElementById('drag');
+        var obigbox = document.getElementById('big-box');
+        var obigimg = document.getElementById('big-img');
+        osmallbox.onmouseover = function (e) {
+            e = e || window.event;
+            odrag.style.display = "inline"
+        }
+        osmallbox.onmousemove = function (e) {
+            e = e || window.event;
+            var oleft = e.clientX - odrag.offsetWidth / 2;
+            var otop = e.clientY - odrag.offsetHeight / 2;
+            var xmax = osmallbox.offsetWidth - odrag.offsetWidth;
+            var ymax = osmallbox.offsetHeight - odrag.offsetHeight;
+            if (oleft < 0) {
+                oleft = 0;
+            }
+            if (oleft > xmax) {
+                oleft = xmax;
+            }
+            if (otop < 0) {
+                otop = 0;
+            }
+            if (otop > ymax) {
+                otop = ymax;
+            }
+            odrag.style.left = oleft + "px";
+            odrag.style.top = otop + "px";
+            obigbox.style.display = "block";
+            var bigleft = (obigimg.offsetWidth - obigbox.offsetWidth) * oleft / xmax;
+            var bigtop = (obigimg.offsetHeight - obigbox.offsetHeight) * otop / ymax;
+            obigimg.style.left = -bigleft + "px";
+            obigimg.style.top = -bigtop + "px";
+        }
+        osmallbox.onmouseout = function () {
+            odrag.style.display = "none";
+            obigbox.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
