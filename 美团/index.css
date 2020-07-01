@@ -154,3 +154,17 @@ body{
 .list .more{
     background: #00d3be;
 }
+#like-box{
+    margin-top: 0.2rem;
+    border-top: 0.02rem solid #cccccc;
+}
+.your-like{
+    width: 100%;
+    height: 0.8rem;
+    font-size: 0.4rem;
+    font-weight: 500;
+    padding: .28rem .2rem;
+    padding-bottom: .2rem;
+    color: #333;
+    border-bottom: 1px solid #DDD8CE;
+}
