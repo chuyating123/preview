@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 0.24rem;
+    background: #f0efed;
+}
+#box{
+    width: 100%;
+    height: 1.01rem;
+    background: #FFD000;
+    position: relative;
+    display: flex;
+}
+.left{
+    height: 100%;
+    width: 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    line-height: 1.01rem;
+    font-size: 0.28rem;
+}
+.left span{
+    width: 1rem;
+    height: 0.4rem;
+}
+.left img{
+    width: 0.18rem;
+    height: 0.1rem;
+}
+.search{
+    width: 3.7rem;
+    height: 0.6rem;
+    background: #ffffff;
+    border-radius: 0.1rem;
+    margin-top: 0.2rem;
+    color: #cccccc;
+    font-size: 0.25rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: flex;
+}
+.search span{
+    text-align: center;
+    line-height: 0.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.search img{
+    height: 0.3rem;
+    width: 0.3rem;
+    margin-right: 0.1rem;
+    margin-top: 0.15rem;
+}
+.right{
+    height: 100%;
+    width: 1rem;
+    position: absolute;
+    right: 0;
+}
+.right img{
+    width: 0.48rem;
+    height: 0.48rem;
+    margin: 0.22rem 0.26rem;
+}
+#download{
+    width: 100%;
+    height: 1.42rem;
+    background: #000000;
+    display: flex;
+    position: relative;
+}
+#download img{
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+}
+#download .title{
+    color: #ffffff;
+    margin-left: 0.2rem;
+    margin-top: 0.2rem;
+}
+#download a{
+    background: #FFD000;
+    width: 1.2rem;
+    height: 0.6rem;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    line-height: 0.6rem;
+    border-radius: 0.1rem;
+    margin-top: 0.3rem;
+    position: absolute;
+    right: 0.2rem;
+}
+.list{
+    width: 100%;
+    height: 3.8rem;
+    background: #ffffff;
+    border-bottom: 0.02rem solid #cccccc;
+    display: flex;
+    list-style: none;
+}
+.list li{
+    height: 1.62rem;
+    width: 20%;
+    box-sizing: border-box;
+    padding: 0.2rem 0;
+}
