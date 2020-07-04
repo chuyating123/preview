@@ -1,9 +1,9 @@
 <template>
-    <footer :style="{background:$store.state.color}">
+    <div :style="{background:$store.state.color}" class="footer">
         <router-link v-for="(obj,index) in menu" :key="index" :to="obj.path" @click.native="$store.commit('change',obj)">
         {{obj.name}}
         </router-link>
-    </footer>
+    </div>
 </template>
 
 <script>
@@ -45,7 +45,7 @@
 </script>
 
 <style lang="scss" scoped>
-footer{
+.footer{
     height: 1rem;
     width: 100%;
     background: green;
