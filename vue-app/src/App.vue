@@ -1,8 +1,10 @@
 <template>
   <div id="app">
      <comment-header></comment-header>
+     <div class="container">
+        <router-view/>
+     </div>
      <comment-Footer></comment-Footer>
-    <router-view/>
   </div>
 </template>
 <script>
@@ -24,5 +26,8 @@ export default {
   color: #2c3e50;
 }
 
-
+.container{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
 </style>

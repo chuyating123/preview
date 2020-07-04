@@ -59,6 +59,7 @@ footer{
         height: 100%;
         font-size: 14px;
         color: #000000;
+        text-decoration: none;
     }
     router-link-active{
         color: #ffffff;
