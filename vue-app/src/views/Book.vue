@@ -1,6 +1,6 @@
 <template>
     <div>
-   <comment-book></comment-book>
+   <comment-book :imgs="imgs"></comment-book>
     </div>
 </template>
 
