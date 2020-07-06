@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .dome{
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,8 +20,8 @@
     <script type="text/babel">
         ReactDOM.render(
             <div>
-                <label htmlFor="name">姓名</label>
-                <input type="text" id="name" />
+                <label className="dome" htmlFor="name">姓名</label>
+                <input  type="text" id="name" />
             </div>,
             document.getElementById('root')
         )
