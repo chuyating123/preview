@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./browser.min.js"></script>
+    <script type="text/babel">
+        ReactDOM.render(
+            <div>
+                <label htmlFor="name">姓名</label>
+                <input type="text" id="name" />
+            </div>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>
