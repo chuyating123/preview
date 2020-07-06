@@ -8,25 +8,28 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="root">
+
+    </div>
     <script src="./react.development.js"></script>
     <script src="./react-dom.development.js"></script>
     <script src="./browser.min.js"></script>
     <script type="text/babel">
-        let name = 'xm';
-        let _style = {
-            color: 'red',
-            background: 'green'
+        const Hello = (props) => {
+            return (
+                <div>
+                    <h2>hello {props.name} {props.age}</h2>
+                    {props.children}
+                </div>
+            )
         }
         ReactDOM.render(
-            <div>
-                <h2>Hello {name}</h2>
-                <p style={_style}>褚雅婷</p>
-                <p style={{
-                    color:'green',
-                    background:'red'
-                }}>马腾</p>
-            </div>,
+            <Hello name='褚雅婷' age={20}>
+                <div>
+                    <h3>我是组件</h3>
+                    <h3>我是内容</h3>
+                </div>
+            </Hello>,
             document.getElementById('root')
         )
     </script>
