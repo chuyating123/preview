@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./browser.min.js"></script>
+    <script type="text/babel">
+    class Main extends React.Component{
+        constructor(){
+            super()
+        }
+        render(){
+            <div>
+            <h2>TodoList</h2>
+            </div>
+        }
+    }
+    class Add extends React.Component{
+        constructor(){
+            super()
+        }
+        render(){
+            <div>
+            <label>添加:</label>
+            <input type="text"/>
+            <button>添加</button>
+            </div>
+        }
+    }
+    class Search extends React.Component{
+        constructor(){
+            super()
+        }
+        render(){
+            <div>
+            <label>搜索:</label>
+            <input type="text"/>
+            </div>
+        }
+    }
+    class List extends React.Component{
+        constructor(){
+            super()
+        }
+        render(){
+            <div>
+            <ul>
+            <li>
+            <input type="checkbox"/>
+            </li>
+            </ul>
+            </div>
+        }
+    }
+    </script>
+</body>
+</html>

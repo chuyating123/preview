@@ -29,9 +29,9 @@
                     </div>
                 )
             }
-            childAdd(){
+            childAdd(data){
                 this.setState({
-                 num:this.state.num+1
+                 num:this.state.num+data*1
                 })
             }
         }
@@ -44,13 +44,15 @@
                 return (
                     <div>
                         <div>我是父组件</div>
+                        <input type="text" ref="myInput"/>
                         <button onClick={this.parentAdd}>子组件++</button>
                         <Children ref="add"></Children>
                     </div>
                 )
             }
             parentAdd(){
-                this.refs.add.childAdd()
+                console.log(this.refs.myInput.value)
+                this.refs.add.childAdd(this.refs.myInput.value)
             }
         }
         ReactDOM.render(
