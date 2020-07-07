@@ -11,14 +11,37 @@
     <script src="./react-dom.development.js"></script>
     <script src="./browser.min.js"></script>
     <script type="text/babel">
-    class Hello extends React.Components{
+    class Hello extends React.Component{
         constructor(){
-            super(),
+            super();
             this.state={
                 count:1
             }
+            this.fun = this.fun.bind(this);
+        }
+        fun(){
+            this.setState({
+                count:this.state.count+1
+            })
+        }
+        render(){
+            return(
+                <div>
+                {this.state.count}
+                <button onClick={this.fun}>count++</button>
+                <h2>{this.props.name}</h2>
+                <h3>{this.props.age}</h3>
+                </div>
+            )
         }
     }
+    ReactDOM.render(
+        <Hello name="褚雅婷" age="20">
+         <h2>我是标题</h2>
+         <h3>我是内容</h3>
+        </Hello>,
+        document.getElementById('root')
+        )
     </script>
 </body>
 </html>

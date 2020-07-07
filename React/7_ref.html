@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./browser.min.js"></script>
+    <script type="text/babel">
+        class Children extends React.Component {
+            constructor() {
+                super(),
+                this.state={
+                    num:1
+                }
+                this.childAdd=this.childAdd.bind(this)
+            }
+            render() {
+                return (
+                    <div>
+                        我是子组件
+                        {this.state.num}
+                    </div>
+                )
+            }
+            childAdd(){
+                this.setState({
+                 num:this.state.num+1
+                })
+            }
+        }
+        class Parents extends React.Component {
+            constructor(props) {
+                super(props);
+                this.parentAdd=this.parentAdd.bind(this)
+            }
+            render() {
+                return (
+                    <div>
+                        <div>我是父组件</div>
+                        <button onClick={this.parentAdd}>子组件++</button>
+                        <Children ref="add"></Children>
+                    </div>
+                )
+            }
+            parentAdd(){
+                this.refs.add.childAdd()
+            }
+        }
+        ReactDOM.render(
+            <Parents></Parents>,
+            document.getElementById('root')
+        )
+
+    </script>
+
+</body>
+
+</html>
