@@ -1,63 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .active{
+            background: pink;
+        }
+        li{
+            display: none;
+        }
+        li .show{
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
     <div id="root"></div>
     <script src="./react.development.js"></script>
     <script src="./react-dom.development.js"></script>
     <script src="./browser.min.js"></script>
     <script type="text/babel">
-    class Main extends React.Component{
-        constructor(){
-            super()
+        class Main extends React.Component {
+            constructor() {
+                super()
+                this.state={
+                    todos:[
+                        {
+                        name:'吃饭',
+                        isActive:false,
+                        isInclude:true
+                        },
+                        {
+                        name:'睡觉',
+                        isActive:false,
+                        isInclude:true
+                        },
+                        {
+                        name:'打豆豆',
+                        isActive:false,
+                        isInclude:true
+                        }
+                    ]
+                }
+                this.addFn=this.addFn.bind(this),
+                this.changeFn=this.changeFn.bind(this)
+                this.delFn=this.delFn.bind(this)
+                this.searchFn=this.searchFn.bind(this)
+            }
+            render() {
+                return (
+                    <div>
+                        <h2>TodoList</h2>
+                        <Add addFn={this.addFn}></Add>
+                        <Search searchFn={this.searchFn}></Search>
+                        <List todos={this.state.todos}  changeFn={this.changeFn} delFn={this.delFn}></List>
+                    </div>
+                )
+            }
+            addFn(value){
+             var todos=[...this.state.todos]
+             todos.push({
+                 name:value,
+                 isActive:false,
+                 isInclude:true
+             })
+             this.setState({
+                 todos
+             })
+            }
+            changeFn(index){
+             var todos=[...this.state.todos]
+             todos[index].isActive=!todos[index].isActive
+             this.setState({
+                 todos
+             })
+            }
+            delFn(index){
+                let todos = [...this.state.todos];
+                todos.splice(index,1);
+                this.setState({
+                    todos
+                })
+            }
+            searchFn(value){
+                let todos = [...this.state.todos];
+                todos.forEach((obj,index)=>{
+                    if( obj.name.includes(value) ){
+                        obj.isInclude = true;
+                    }else{
+                        obj.isInclude = false;
+                    }
+                })
+                this.setState({
+                    todos
+                })
+            }
         }
-        render(){
-            <div>
-            <h2>TodoList</h2>
-            </div>
+        class Add extends React.Component {
+            constructor() {
+                super()
+                this.add=this.add.bind(this)
+            }
+            render() {
+                return (
+                    <div>
+                        <label>添加:</label>
+                        <input type="text" ref="myInput"/>
+                        <button onClick={this.add}>添加</button>
+                    </div>
+                )
+            }
+            add(){
+             this.props.addFn(this.refs.myInput.value)
+             this.refs.myInput.value = ''
+            }
         }
-    }
-    class Add extends React.Component{
-        constructor(){
-            super()
+        class Search extends React.Component {
+            constructor() {
+                super()
+            }
+            render() {
+                return (
+                    <div>
+                        <label>搜索:</label>
+                        <input type="text" onChange={this.Search(e)}/>
+                    </div>
+                )
+            }
+            Search(e){
+                this.props.searchFn(e.target.value)
+            }
         }
-        render(){
-            <div>
-            <label>添加:</label>
-            <input type="text"/>
-            <button>添加</button>
-            </div>
+        class List extends React.Component {
+            render() {
+                return (
+                        <ul>
+                        {
+                           this.props.todos.map((obj,index)=>{
+                           return(
+                            <li key={index} onClick={()=>{
+                                            // 当前对象的isActive取非
+                                            this.props.changeFn(index)
+                                        }} className={obj.isActive?'active':''+" "+obj.isInclude?'show':' '}>
+                                <input type="checkbox" defaultChecked={obj.isActive}/>
+                                {obj.name}
+                                <button onClick={this.Del(index)}>删除</button>
+                            </li>
+                           )
+                           }) 
+                        }
+                        </ul>
+                )
+            }
+            Del(index){
+             this.props.delFn(index)
+            }
         }
-    }
-    class Search extends React.Component{
-        constructor(){
-            super()
-        }
-        render(){
-            <div>
-            <label>搜索:</label>
-            <input type="text"/>
-            </div>
-        }
-    }
-    class List extends React.Component{
-        constructor(){
-            super()
-        }
-        render(){
-            <div>
-            <ul>
-            <li>
-            <input type="checkbox"/>
-            </li>
-            </ul>
-            </div>
-        }
-    }
+        ReactDOM.render(
+            <Main></Main>,
+            document.getElementById('root')
+        )
     </script>
 </body>
+
 </html>
