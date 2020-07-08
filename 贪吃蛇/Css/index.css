@@ -1,0 +1,22 @@
+#container{
+    background-image: url('../images/bg.jpg');
+    height: 1038px;
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.btn{
+    width: 100px;
+    height: 350px;
+    position: absolute;
+    right: 20px;
+    overflow: hidden;
+}
+#container button{
+    width: 85px;
+    height: 30px;
+    background: orange;
+    border-radius: 20%;
+    margin-top: 50px;
+}
