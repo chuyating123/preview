@@ -1,6 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 #container{
     background-image: url('../images/bg.jpg');
-    height: 1038px;
+    height: 650px;
     width: 800px;
     margin: 0 auto;
     position: relative;
@@ -10,7 +14,8 @@
     width: 100px;
     height: 350px;
     position: absolute;
-    right: 20px;
+    right: 10px;
+    top: 150px;
     overflow: hidden;
 }
 #container button{
@@ -19,4 +24,40 @@
     background: orange;
     border-radius: 20%;
     margin-top: 50px;
+}
+/* #container p{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: orange;
+    margin-top: 60px;
+    text-align: center;
+} */
+#map{
+    width: 631px;
+    height: 421px;
+    position: absolute;
+    left: 50px;
+    top: 140px;
+}
+#map #map-bg{
+    border-collapse: collapse;
+}
+#map-bg td{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cccccc;
+}
+.snake{
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 0, 0);
+    position: absolute;
+    top: 63.2px;
+}
+.food{
+    width: 20px;
+    height: 20px;
+    background: rgb(0, 255, 255);
+    position: absolute;
 }
