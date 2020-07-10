@@ -27,6 +27,7 @@
         var omap = document.getElementById('map')
         var direction = 'right'
         var ostart = document.getElementById('start')
+        var ofood, timer
         for (var row = 0; row < 20; row++) {
             var otr = document.createElement('tr')
             for (var col = 0; col < 30; col++) {
@@ -51,60 +52,70 @@
             do {
                 var flag = true
                 var iLeft = parseInt(Math.random() * 30)
-                iLeft = iLeft * 20.8 + 1
+                iLeft = iLeft * 21 + 1
                 var iTop = parseInt(Math.random() * 20)
-                iTop = iTop * 20.8 + 1
+                iTop = iTop * 21 + 1
                 for (var i = 0; i < snakeBox.length; i++) {
                     if (snakeBox.offsetLeft == iLeft && snakeBox.offsetTop == iTop) {
                         flag = false
                     }
                 }
-                var ofood = document.createElement('div')
+                ofood = document.createElement('div')
                 ofood.className = 'food'
-                ofood.style.left=iLeft+"px"
-                ofood.style.top=iTop+"px"
-                ofood.pos={
-                    left:iLeft,
-                    top:iTop
+                ofood.style.left = iLeft + "px"
+                ofood.style.top = iTop + "px"
+                ofood.pos = {
+                    left: iLeft,
+                    top: iTop
                 }
                 omap.appendChild(ofood)
             } while (!flag)
         }
         produceFood()
+        function snakeMove() {
+            var snakeHeader = snakeBox[0]
+            if (direction == 'down') {
+                snakeHeader.style.top = snakeHeader.offsetTop + 21 + "px"
+            }
+            if (direction == 'right') {
+                snakeHeader.style.left = snakeHeader.offsetLeft + 21 + "px"
+            }
+            if (direction == 'up') {
+                snakeHeader.style.top = snakeHeader.offsetTop - 21 + "px"
+            }
+            if (direction == 'left') {
+                snakeHeader.style.left = snakeHeader.offsetLeft - 21 + "px"
+            }
+            if (snakeHeader.offsetLeft == ofood.offsetLeft && snakeHeader.offsetTop == ofood.offsetTop) {
+                ofood.className = 'snake'
+                ofood.style.left = snakeHeader.pos.left + "px"
+                ofood.style.top = snakeHeader.pos.top + "px"
+                snakeBox.splice(1, 0, ofood)
+                produceFood()
+            } else {
+                for (var i = 1; i < snakeBox.length; i++) {
+                    snakeBox[i].style.left = snakeBox[i - 1].pos.left + "px"
+                    snakeBox[i].style.top = snakeBox[i - 1].pos.top + "px"
+                }
+            }
+            for (var i = 0; i < snakeBox.length; i++) {
+                snakeBox[i].pos.left = snakeBox[i].offsetLeft
+                snakeBox[i].pos.top = snakeBox[i].offsetTop
+            }
+            for(var i=0;i<snakeBox.length;i++){
+                if(snakeHeader.offsetLeft==snakeBox.offsetLeft||snakeHeader.offsetTop==snakeBox.offsetTop){
+                    alert('吃到自己了')
+                    clearInterval(timer)
+                }
+            }
+            if(snakeHeader.offsetLeft==-20||snakeHeader.offsetTop==-20||snakeHeader.offsetLeft==624.8||snakeHeader.offsetTop==416.8){
+                alert('Game Over!')
+                clearInterval(timer)
+            }
+        }
         ostart.onclick = function () {
-            setInterval(function () {
-                if (direction == 'down') {
-                    var snakeHeader = snakeBox[0]
-                    snakeHeader.style.top = snakeHeader.offsetTop + 21 + "px"
-                }
-                if (direction == 'right') {
-                    var snakeHeader = snakeBox[0]
-                    snakeHeader.style.left = snakeHeader.offsetLeft + 21 + "px"
-                }
-                if (direction == 'up') {
-                    var snakeHeader = snakeBox[0]
-                    snakeHeader.style.top = snakeHeader.offsetTop - 21 + "px"
-                }
-                if (direction == 'left') {
-                    var snakeHeader = snakeBox[0]
-                    snakeHeader.style.left = snakeHeader.offsetLeft - 21 + "px"
-                }
-                if (snakeHeader.offsetLeft == ofood.offsetLeft && snakeHeader.offsetTop == ofood.offsetTop) {
-                    ofood.className = 'snake'
-                    ofood.style.left = snakeHeader.pos.left + "px"
-                    ofood.style.top = snakeHeader.pos.top + "px"
-                    snakeBox.splice(1, 0, ofood)
-                    produceFood()
-                } else {
-                    for (var i = 1; i < snakeBox.length; i++) {
-                        snakeBox[i].style.left = snakeBox[i - 1].pos.left + "px"
-                        snakeBox[i].style.top = snakeBox[i - 1].pos.top + "px"
-                    }
-                }
-                for (var i = 0; i < snakeBox.length; i++) {
-                    snakeBox[i].pos.left = snakeBox[i].offsetLeft
-                    snakeBox[i].pos.top = snakeBox[i].offsetTop
-                }
+            timer = setInterval(function () {
+                snakeMove()
             }, 300)
         }
         document.onkeydown = function (e) {
