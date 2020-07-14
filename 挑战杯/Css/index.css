@@ -1,0 +1,254 @@
+*{
+    position: relative;
+}
+#header{
+    height: 30px;
+    width: 100%;
+    background: #eeeeee;
+}
+#header ul{
+    margin: 0 auto;
+    list-style: none;
+}
+#header li{
+    float: right;
+    height: 100%;
+    width: 80px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 30px;
+    margin-right: 10px;
+    display: flex;
+}
+#header li a{
+    color: #000000;
+    text-decoration: none;
+    margin-right: 2px;
+} 
+#header dl{
+    position: absolute;
+    z-index: 1001;
+    top: 30px;
+    left: 1330px;
+    display: none;
+    font-size: 12px;
+    border: 1px solid #eee;
+    border-top: none;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 0 12px;
+    background-color: #f5f5f5;
+    opacity: 0.95;
+}
+#header dd{
+    float: left;
+    margin-right: 10px;
+}
+#header dt{
+    font-weight: bold;
+    clear: both;
+}
+#header .nav .inline{
+    height: 8px;
+    margin: 15px 5px 0;
+    line-height: 0;
+    font-size: 0;
+    border-bottom: 1px dashed #bbb;
+}
+#header .nav:hover dl{
+    display: block;
+}
+#header-img{
+    height: 94px;
+    width: 100%;
+    position: relative;
+}
+#header-img a{
+    width: 230px;
+    height: 84px;
+    margin-left: 200px;
+    float: left;
+}
+#header-img img{
+    width: 230px;
+    height: 84px;
+}
+#header-img .img2{
+    position: absolute;
+    right: 300px;
+}
+#header-title{
+    background-color: #e15517;
+    height: 40px;
+    width: 100%;
+}
+#header-title ul{
+    margin: 0 auto;
+    width: 660px;
+    height: 40px;
+}
+#header-title li{
+    float: left;
+    margin: 0 20px;
+}
+#header-title li a{
+      text-decoration: none;
+      text-align: center;
+      line-height: 40px;
+      color: #f5f5f5;
+      font-size: 16px;
+      font-weight: 600;
+}
+#img-box{
+    width: 1200px;
+    height: 340px;
+    position: relative;
+    margin: 0 auto;
+}
+#img-box img{
+    width: 1200px;
+    height: 340px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+#img-box .first img{
+    display: block;
+}
+#panel{
+    width: 1200px;
+    height: 266.4px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#panel h3{
+    font-size: 20px;
+    font-weight: normal;
+    color: #e15517;
+    margin-bottom: 20px;
+}
+#panel div{
+    float: left;
+    width: 360px;
+    height: 180px;
+    margin-right: 40px;
+    background-color: #e6e6e6;
+}
+#panel a{
+    width: 161px;
+    height: 154px;
+    margin: 0 106px;
+}
+#panel img{
+    width: 161px;
+    height: 154px;
+    margin-top: 10px;
+}
+#news-left{
+    width: 580px;
+    height: 270px;
+    float: left;
+    margin-left: 160px;
+    /* position: relative; */
+}
+#news-left h4{
+    font-size: 18px;
+    /* font-weight: normal; */
+    border-bottom: 2px solid #e15517;
+    color: #e15517;
+    padding-bottom: 4px;
+    font-weight: normal;
+    overflow: hidden;
+}
+#news-left .news-list{
+    float: left;
+    margin-left: 10px;
+}
+#news-left li{
+    margin-top: 10px;
+}
+#news-left a{
+    width: 260px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #666666;
+}
+#news-left img{
+    width: 240px;
+    height: 190px;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: absolute;
+    right: 20px;
+}
+#news-right{
+    width: 580px;
+    height: 270px;
+    float: left;
+    margin-left: 160px;
+    position: relative;
+}
+#news-right h4{
+    font-size: 18px;
+    /* font-weight: normal; */
+    border-bottom: 2px solid #e15517;
+    color: #e15517;
+    padding-bottom: 4px;
+    font-weight: normal;
+}
+#news-right .news-list{
+    float: left;
+    margin-left: 10px;
+}
+#news-right li{
+    margin-top: 10px;
+}
+#news-right a{
+    width: 260px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #666666;
+}
+#news-right img{
+    width: 240px;
+    height: 190px;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: absolute;
+    right: 20px;
+}
+#compony{
+    width: 1200px;
+    height: 228px;
+    margin-left: 160px;
+    clear: both;
+}
+#compony h3{
+    font-size: 18px;
+    color: #e15517;
+    font-weight: normal;
+    font-weight: 700;
+}
+#compony .container{
+    height: 196px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+}
+#compony .container li{
+    float: left;
+    width: 140px;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #d4d4d4;
+    /* margin-right: 40px;
+    margin-bottom: 20px; */
+    margin: 20px 30px 20px 25px;
+}
+#compony .container img{
+    display: block;
+    margin: 0 auto;
+    margin-top: 8px;
+}
