@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body {
+            background: url(./img/timg.gif) 0 0 no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #login_box {
+            width: 300px;
+            height: 350px;
+            background: #eeeeee;
+            margin: 150px auto;
+            border-radius: 10px;
+            border: 1px solid #cccccc;
+            box-shadow: 2px 2px 10px #cccccc;
+            padding-top: 20px;
+        }
+
+        #login_box form {
+            width: 260px;
+            height: 200px;
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+
+        #login_box h2 {
+            color: #000000;
+            text-align: center;
+        }
+
+        #login_box input {
+            height: 20px;
+            margin-bottom: 30px;
+            border: none;
+            box-shadow: 2px 2px 10px #cccccc;
+            border-radius: 3px;
+        }
+
+        #login_box .determine {
+            width: 70px;
+            height: 35px;
+            background: #e5aeec;
+            border: none;
+            margin-left: 90px;
+            box-shadow: 2px 2px 10px #cccccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login_box">
+        <h2>用户登录</h2>
+        <form action="login.do" method="post">
+            用户名：<input type="text" name="username"><br>
+             密码  ：   <input type="password" name="password"><br>
+            <input class="determine" type="submit" value="确定">
+        </form>
+    </div>
+</body>
+</body>
+
+</html>

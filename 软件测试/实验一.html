@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 300px;
+            /* border: 1px solid #000000; */
+            background: pink;
+            margin: 100px auto;
+            border-radius: 10px;
+        }
+        .box .container{
+            height: 200px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .container input{
+            width: 100px;
+            height: 20px;
+            margin-top: 30px;
+        }
+        .container button{
+            margin-left: 100px;
+            margin-top: 30px;
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+        请输入1000-2019年之间的一个日期:
+        <input id="date" type="text" value="">
+        <button id="determine">确定</button>
+        <span></span>
+       </div>
+    </div>
+    <script>
+     var date=new Array(8);
+     var odate=document.getElementById('date')
+     var obtn=document.getElementById('determine')
+     obtn.onclick=function(){
+        date=odate.value
+        console.log(date)
+        if(parseInt(date.slice(0,4))<1000||parseInt(date.slice(0,4))>2019){
+            console.log('不合法')
+        }
+        if(parseInt(date.slice(4,6))<1||parseInt(date.slice(4,6))>12){
+            console.log('不合法')
+        }
+        if(parseInt(date.slice(4,6))==4||parseInt(date.slice(4,6))==6||parseInt(date.slice(4,6))==9||parseInt(date.slice(4,6))==11){
+            
+        }
+     }
+    </script>
+</body>
+</html>

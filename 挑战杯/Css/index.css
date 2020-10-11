@@ -29,7 +29,7 @@
     position: absolute;
     z-index: 1001;
     top: 30px;
-    left: 1330px;
+    left: -30px;
     display: none;
     font-size: 12px;
     border: 1px solid #eee;
@@ -40,7 +40,7 @@
     background-color: #f5f5f5;
     opacity: 0.95;
 }
-#header dd{
+#header dl dd{
     float: left;
     margin-right: 10px;
 }
@@ -73,9 +73,18 @@
     width: 230px;
     height: 84px;
 }
-#header-img .img2{
+#header-img .text{
     position: absolute;
-    right: 300px;
+    right: 200px;
+    width: 260px;
+    height: 42px;
+    margin-top: 20px;
+}
+#header-img span{
+   font-size: 18px;
+   color: #e15517;
+   font-weight: 900;
+   line-height: 42px;
 }
 #header-title{
     background-color: #e15517;
@@ -150,6 +159,7 @@
     height: 270px;
     float: left;
     margin-left: 160px;
+    overflow: hidden;
     /* position: relative; */
 }
 #news-left h4{
@@ -162,11 +172,19 @@
     overflow: hidden;
 }
 #news-left .news-list{
+    /* float: left; */
+    /* margin-left: 10px; */
+    font-size: 12px;
+    line-height: 24px;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    overflow: hidden;
     float: left;
-    margin-left: 10px;
+    width: 320px;
 }
 #news-left li{
-    margin-top: 10px;
+    height: 26px;
+    width: 320px;
 }
 #news-left a{
     width: 260px;
@@ -174,14 +192,23 @@
     text-overflow: ellipsis;
     overflow: hidden;
     color: #666666;
+    text-decoration: none;
+    display: block;
+    float: left;
+}
+#news-left span{
+    color: #aaa;
+    padding-left: 8px;
+}
+#news-left .news-img{
+    width: 240px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 #news-left img{
     width: 240px;
     height: 190px;
-    margin-left: 20px;
-    margin-top: 20px;
-    position: absolute;
-    right: 20px;
 }
 #news-right{
     width: 580px;
@@ -189,6 +216,7 @@
     float: left;
     margin-left: 160px;
     position: relative;
+    overflow: hidden;
 }
 #news-right h4{
     font-size: 18px;
@@ -199,11 +227,17 @@
     font-weight: normal;
 }
 #news-right .news-list{
+    font-size: 12px;
+    line-height: 24px;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    overflow: hidden;
     float: left;
-    margin-left: 10px;
+    width: 320px;
 }
 #news-right li{
-    margin-top: 10px;
+    height: 26px;
+    width: 320px;
 }
 #news-right a{
     width: 260px;
@@ -211,14 +245,22 @@
     text-overflow: ellipsis;
     overflow: hidden;
     color: #666666;
+    display: block;
+    float: left;
+}
+#news-right span{
+    color: #aaa;
+    padding-left: 8px;
+}
+#news-right .news-img{
+    width: 240px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 #news-right img{
     width: 240px;
     height: 190px;
-    margin-left: 20px;
-    margin-top: 20px;
-    position: absolute;
-    right: 20px;
 }
 #compony{
     width: 1200px;
