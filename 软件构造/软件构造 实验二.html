@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  class Production{
+    constructor(init,char,final){
+      this.init=init,
+      this.char=char,
+      this.final=final
+    }
+    print(){
+      return `(${this.init},${this.char},${this.final})\n`;
+    }
+  };
+  let dfa1={
+    currentState:'S',
+    change:[],
+    final:['4','5','6','7']
+  };
+  dfa1.change.push(new Production('1','a','2'));
+  dfa1.change.push(new Production('1','b','2'));
+  dfa1.change.push(new Production('1','c','3'));
+  dfa1.change.push(new Production('2','a','4'));
+  dfa1.change.push(new Production('2','b','5'));
+  dfa1.change.push(new Production('2','c','3'));
+  dfa1.change.push(new Production('3','b','2'));
+  dfa1.change.push(new Production('3','c','6'));
+  dfa1.change.push(new Production('4','a','4'));
+  dfa1.change.push(new Production('4','b','5'));
+  dfa1.change.push(new Production('4','c','2'));
+  dfa1.change.push(new Production('5','b','5'));
+  dfa1.change.push(new Production('6','a','7'));
+  dfa1.change.push(new Production('6','c','6'));
+  dfa1.change.push(new Production('6','b','2'));
+  dfa1.change.push(new Production('7','a','7'));
+
+  
+  function syntaxJudger(str,dfa){
+    var index=0;
+    var curChar=str[index];
+    var curState='1';
+    var change=dfa.change;
+    var flag=0;
+    var order='';
+    for(var i=0;i<change.length;i++){  //有两种状态会跳出for 1.走到了末尾 但不是终态 2.在当前状态 下一个字符不可以继续推导
+      if(index==str.length && dfa.final.indexOf(curState)!=-1){
+        console.log(order);
+        console.log("输入符号串是符合该dfa的句子\n");
+        flag=1;
+        break;
+      }
+      
+      var c=0;
+      if(change[i].init==curState && change[i].char==curChar){
+        if(change[i].init==change[i].final){
+          while(str[index]==change[i].char){
+            order+=change[i].print();
+            index++;
+            c++;
+          }
+          // console.log(change[i].char+"重复"+c+"次,index="+index);
+          curChar=str[index];
+          i=0;
+          continue;
+        }
+        order+=change[i].print();
+        // console.log(change[i].print());
+        curState=change[i].final;
+        curChar=str[++index];
+        i=0;
+      } 
+
+    }
+
+    if(!flag){
+      // console.log(index);
+      console.log(order);
+      sstr=str.substr(0,index)+' ^'+str.substr(index); //这里截取到出错字符的前一个 
+      console.log(sstr);
+      if(index==str.length){
+        console.log("扫描完毕，当前状态"+curState+"不是终态，输入符号串不是符合该dfa的句子");
+
+      }
+      else
+      console.log("当前状态"+curState+"遇到"+curChar+"不可再向下推导，输入符号串不是符合该dfa的句子");
+
+    }
+
+  }
+</script>
+</html>
