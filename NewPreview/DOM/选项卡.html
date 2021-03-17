@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #box {
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        #title {
+            overflow: hidden;
+        }
+
+        #title li {
+            width: 50px;
+            height: 30px;
+            background: #eee;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        #title .active {
+            background: red;
+            color: #ffffff;
+        }
+
+        #container {
+            width: 200px;
+            height: 100px;
+        }
+
+        #container li {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        #container .selected {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="title">
+            <li class="active">时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+        <ul id="container">
+            <li class="selected">111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <script>
+            var oTit = document.getElementById("title")
+            var ali = oTit.getElementsByTagName("li")
+            var oCon=document.getElementById("container")
+            var oli=oCon.getElementsByTagName("li")
+            for (var i = 0; i < ali.length; i++) {
+                ali[i].index=i
+                ali[i].onclick = function () {
+                    for (var j = 0; j < ali.length; j++) {
+                        ali[j].className = ""
+                        oli[j].className=""
+                    }
+                    this.className = "active"
+                    oli[this.index].className="selected"
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
