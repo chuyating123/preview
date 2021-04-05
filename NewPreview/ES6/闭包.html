@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="container">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById("container")
+        var oLi = oUl.getElementsByTagName("li")
+        // for (var i = 0; i < oLi.length; i++) {
+        //     oLi[i].onclick = function () {
+        //         console.log(i)
+        //     }
+        // }
+        // 无论点击谁都会输出3
+
+
+        // for (var i = 0; i < oLi.length; i++) {
+        //     (function (i) {
+        //         oLi[i].onclick = function () {
+        //             console.log(i)
+        //         }
+        //     })(i)
+        // }
+
+
+        for(let i=0;i<oLi.length;i++){
+            oLi[i].onclick=function(){
+                console.log(i)
+            }
+        }
+    </script>
+</body>
+
+</html>
