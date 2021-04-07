@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+     <hello title="标题" content="内容">
+         <h3 slot="slot1">红船精神的规范化股份</h3>
+         <div slot="slot2">
+             <a href="www.baidu.com">百度</a>
+             <h4>你的分多少份剑荡四方就回复</h4>
+         </div>
+     </hello>
+    </div>
+    <template id="temp">
+        <div>
+            <slot name="slot1"></slot>
+            <h2>{{title}}</h2>
+            <span>{{content}}</span>
+            <p>324356</p>
+            <slot name="slot2"></slot>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        // Vue.component("hello",{
+        //         template:"#temp"
+        //     })
+        // new Vue({
+        //     el:"#root",
+        // })
+        new Vue({
+            el:"#root",
+            components:{
+             "hello":{
+                 template:"#temp",
+                 props:["title","content"]
+             }
+            }
+        })
+    </script>
+</body>
+</html>
