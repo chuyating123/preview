@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+         background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+    <input v-model="myValue" type="text">
+    <button @click="add()">添加</button>
+    <ul>
+        <li v-for="(obj,index) in list" :class={red:obj.isChecked} @click="fn(index)">{{obj.name}}</li>
+    </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#root",
+            data:{
+            list:[
+                {
+                    name:"吃饭",
+                    isChecked:false
+                },
+                {
+                    name:"睡觉",
+                    isChecked:false
+                },
+                {
+                    name:"爱马腾",
+                    isChecked:false
+                }
+            ],
+            myValue:"",
+            },
+            methods:{
+                add(){
+                this.list.push({
+                    name:this.myValue,
+                    isChecked:false
+                })
+                },
+                fn(index){
+                    this.list[index].isChecked=!this.list[index].isChecked
+                }
+            }
+        })
+    </script>
+</body>
+</html>

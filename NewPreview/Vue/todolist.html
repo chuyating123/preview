@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .active {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>todolist</h2>
+        <hr>
+        名称：<input type="text" v-model="proName" placeholder="请输入商品名称">
+        价格：<input type="text" v-model="proPrice" placeholder="请输入商品价格">
+        <button @click="add()">添加</button>
+        <div>
+            <input type="text" placeholder="请输入搜索内容">
+            <button>搜索</button>
+        </div>
+        <ul>
+            <li v-for="(obj,index) in list" :class="{active:obj.isActive}" @click="checked(index)">
+                <input type="checkbox" v-model="obj.isActive">
+                <span>{{obj.name}}</span>
+                <div class="right">
+                    <span>{{obj.price}}</span>
+                    <span @click.stop="del(index)">[X]</span>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <button @click="delAll()">删除选中</button>
+            总价: <span>{{allMoney}}</span>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                list: [
+                    {
+                        name: "苹果",
+                        price: 5,
+                        isActive: false
+                    },
+                    {
+                        name: "菠萝",
+                        price: 5,
+                        isActive: false
+                    }
+                ],
+                proName: "",
+                proPrice: ""
+            },
+            methods: {
+                add() {
+                    this.list.push({
+                        name: this.proName,
+                        price: this.proPrice,
+                        isActive: false
+                    })
+                    this.proName = "",
+                        this.proPrice = ""
+                },
+                checked(index) {
+                    this.list[index].isActive = !this.list[index].isActive
+                },
+                del(index) {
+                    this.list.splice(index, 1)
+                },
+                delAll() {
+                    var arr = this.list.filter(function (obj, index) {
+                        return obj.isActive == false
+                    })
+                    this.list = arr
+                },
+                totle() {
+                    let sum = 0;
+                    // 计算list中所有被勾选的价格和
+                    this.list.forEach(function (obj) {
+                        if (obj.isActive) {
+                            sum += obj.price;
+                        }
+                    })
+                    return sum;
+                },
+            },
+            computed: {
+                allMoney() {
+                    let sum = 0;
+                    // 计算list中所有被勾选的价格和
+                    this.list.forEach(function (obj) {
+                        if (obj.isActive) {
+                            sum += obj.price;
+                        }
+                    })
+                    return sum;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
