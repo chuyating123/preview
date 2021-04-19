@@ -1,7 +1,6 @@
 <template>
     <div>
-        <div><router-link to="/detail/helloworld">这是详情页</router-link></div>
-        <router-view></router-view>
+     我是子路由
     </div>
 </template>
 

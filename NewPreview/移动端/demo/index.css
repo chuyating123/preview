@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+h3{
+    width: 960px;
+    height: 100px;
+    background: #ccc;
+    margin: 50px auto 0;
+    text-align: center;
+    line-height: 100px;
+}
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+}
+.img2, .img3{
+    display: none;
+}
+@media screen and (max-width:960px){
+    h3{
+        width: 100%;
+    }
+    .img2{
+        display: block;
+    }
+    .img3, .img1{
+        display: none;
+    }
+}
+@media screen and (max-width:480px){
+    h3{
+        width: 100%;
+    }
+    .img3{
+        display: block;
+    }
+    .img2, .img1{
+        display: none;
+    }
+}
