@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Detail from '../views/Detail.vue'
 import Test from '../views/Test.vue'
-import HelloWorld from '../views/HelloWorld.vue'
+import A from '../views/A.vue'
 
 Vue.use(VueRouter)
 
@@ -19,8 +19,8 @@ const routes = [
     component: Detail,
     children: [
       {
-        path:'helloworld',
-        component:'HelloWorld'
+        path:'a',
+        component:A
       }
     ]
   },

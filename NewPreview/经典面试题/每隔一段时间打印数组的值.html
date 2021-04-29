@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5];
+        for (var i = 0; i < arr.length; i++) {
+            (function (a) {               //因为setTimeout异步执行的特性，所以定义一个自执行函数，先把i的值传入进来，避免在执行setTimeout的时候i的值变为4。
+                setTimeout(function () {
+                    console.log(arr[a]);
+                }, 1000);
+            })(i);
+        }
+
+    </script>
+</body>
+
+</html>

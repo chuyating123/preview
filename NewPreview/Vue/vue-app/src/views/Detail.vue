@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div><router-link to="/detail/helloworld">这是详情页</router-link></div>
+        <div><router-link to="/detail/a">这是详情页</router-link></div>
         <router-view></router-view>
     </div>
 </template>

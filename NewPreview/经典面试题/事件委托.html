@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button id="add">click</button>
+    <ul id="dad">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var oAdd = document.getElementById("add")
+        var oUl = document.getElementById('dad')
+        var aLi = oUl.getElementsByTagName("li")
+        oAdd.onclick = function () {
+            var oLi = document.createElement("li")
+            oLi.innerHTML = Math.random()
+            oUl.appendChild(oLi)
+        }
+        // 首次进入页面的时候，绑定元素的事件已经执行完了，再次点击的时候只会执行按钮的点击事件，不会再执行下面了
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].onclick=function(){
+        //         console.log(this.innerHTML)
+        //     }
+        // }
+        // 点击li的时候 会触发父元素ul的事件 => 冒泡
+        oUl.onclick = function (e) {
+            if (e.target.tagName == 'LI') {
+                // 事件源 谁导致的这个事件 事件源就是谁 
+                console.log(e.target.innerHTML)
+            }
+        }
+    </script>
+</body>
+
+</html>
