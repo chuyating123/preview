@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">首页</router-link> |
-      <router-link to="/detail">详情</router-link>
-      <router-link to="/test">测试</router-link>
-    </div>
-    <router-view/>
+    <commen-header></commen-header>
+    <commen-footer></commen-footer>
   </div>
 </template>
+<script>
+import CommenHeader from './components/CommenHeader'
+import CommenFooter from './components/CommenFooter'
+export default {
+  components:{
+    CommenHeader,
+    CommenFooter
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -18,16 +24,5 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

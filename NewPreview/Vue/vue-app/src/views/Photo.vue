@@ -1,6 +1,6 @@
 <template>
     <div>
-     我是子路由
+图片
     </div>
 </template>
 

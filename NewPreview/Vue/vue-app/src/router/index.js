@@ -1,33 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Detail from '../views/Detail.vue'
-import Test from '../views/Test.vue'
-import A from '../views/A.vue'
+import Movie from '../views/Movie'
+import Music from '../views/Music'
+import Book from '../views/Book'
+import Photo from '../views/Photo'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/movie',
+    component: Movie
   },
   {
-    path: '/detail',
-    name: 'Detail',
-    component: Detail,
-    children: [
-      {
-        path:'a',
-        component:A
-      }
-    ]
+    path: '/music',
+    component: Music
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test
+    path: '/book',
+    component: Book
+  },
+  {
+    path: '/photo',
+    component: Photo
   }
 ]
 
