@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <commen-header></commen-header>
+    <div id="container">
+      <router-view></router-view>
+    </div>
     <commen-footer></commen-footer>
   </div>
 </template>
@@ -22,6 +25,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  #container{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
 }
 
 
